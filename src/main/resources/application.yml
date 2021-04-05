@@ -1,0 +1,12 @@
+server:
+  port: 9052
+spring:
+  profiles:
+    active: ${TERMINAL_PROFILE:dev}
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:9051}
+  cloud:
+    config:
+      label: ${TERMINAL_LABEL:terminal}
+      username: ${SERVER_USER:pet}
+      password: ${SERVER_PASS:pass}
